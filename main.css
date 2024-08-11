@@ -21,7 +21,7 @@ body{
 }
 
 .dropdowns{
-    width: 800px;
+    width: 400px;
     margin: 0px auto;
     padding-top: 20px;
     flex: 1;
@@ -37,7 +37,7 @@ input {
     border: 2px solid #ccc;
     border-radius: 5px;
     padding: 2px 5px;
-    width: 400px;
+    width: 200px;
 }
 
 .dropdowns .select-menu {
@@ -128,7 +128,7 @@ input {
 }
 
 .button{
-    width: 100%;
+    width: 50%;
     height: 45px;
     background: white;
     border: none;
