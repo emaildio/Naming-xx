@@ -1,430 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
-    <title>Naming Conventions</title>
-</head>
-<body>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    <div id="container">
+body {
+  background: #f4f4f4; /* Light gray background */
+}
 
-        <div class="dropdowns">
-            
-            <!-- first Item -->
-            <h1>Campaign</h1>
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="account-client">Account/Client:</label>
-                    <span class="sBtn-text" id="account-client" name="account-client">Select your option</span>
-                    <i class="bx bx-chevron-down"></i>
-                </div>
-                <ul class="options">
-                    <li class="option">
-                        <i class='bx bxl-slack-old' style="color: #E1306C;"></i> 
-                        <span class="option-text">J&Z Strategies</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">Counterpoint</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">SDEMS</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">Gozzo Strategies</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">Barkan Strategies</span>
-                    </li>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">Perry Communications</span>
-                    </li>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">Haymarket Strategies</span>
-                    </li>
-                     </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">KGV</span>
-                    </li>
-                </ul>
-            </div>
+#container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
 
-            <!-- second Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="campaign-candidate">Campaign/Candidate:</label>
-                    <input type="text" id="campaign-candidate" name="campaign-candidate">
-                </div>
-            </div>
+.dropdowns {
+  width: 45%;
+  margin: 0 10px;
+  padding: 20px;
+  border: 1px solid #e0e0e0; /* Light gray border */
+  border-radius: 8px;
+  background-color: #fff; /* White background for the forms */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
 
-            <!-- third Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="state">Sate:</label>
-                     <input type="text" id="state" name="state">
-                </div>
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Dark gray heading */
+}
 
-            <!-- fourth Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="office">Office:</label>
-                    <input type="text" id="office" name="office">
-                </div>
-            </div>
+label, span {
+  display: block;
+  margin-bottom: 5px;
+  color: #555; /* Medium gray labels */
+}
 
-            <!-- fifth Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="aedms-sdems">AEDMS/SDEMS?:</label>
-                    <input type="text" id="aedms-sdems" name="aedms-sdems">
-                </div>
-            </div>
+input, .select-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
 
-            <!-- sixth Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="start-date">Start Date:</label>
-                      <input type="text" id="start-date" name="start-date">
-                </div>
-            </div>
+.select-menu {
+  position: relative;
+  margin-bottom: 20px;
+}
 
-            <!-- seventh Item -->
-           <div class="select-menu">
-                <div class="select-btn">
-                    <label for="start-date">Start Date:</label>
-                      <input type="text" id="end-date" name="end-date">
-                </div>
-            </div>
+.select-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  cursor: pointer;
+}
 
-            <!-- eighth Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="year">Year:</label>
-                    <input type="number" id="year" name="year">
-                </div>
-            </div>
+.select-btn i {
+  transition: 0.3s;
+}
 
-            <div class="buttons">
-                <button class="button" onclick="generateCName()">Generate Campaign Name</button>
-                <button class="button" onclick="resetCForm()">Reset</button>
-            </div>
+.select-menu.active .select-btn i {
+  transform: rotate(-180deg);
+}
 
-        </div>
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  display: none;
+  z-index: 1;
+  max-height: 200px; /* Limit dropdown height, add scroll if needed */
+  overflow-y: auto;
+}
 
-        
-        <div class="dropdowns">
+.select-menu.active .options {
+  display: block;
+}
 
-            <h1>Ad Group Name</h1>
-            <!-- first Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="account-client">Account/Client:</label>
-                    <span class="sBtn-text" id="account-client-ad" name="account-client">Select your option</span>
-                    <i class="bx bx-chevron-down"></i>
-                </div>
-                <ul class="options">
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">J&Z Strategies</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">Counterpoint</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">SDEMS</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">Gozzo Strategies</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">Barkan Strategies</span>
-                    </li>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">Perry Communications</span>
-                    </li>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">Haymarket Strategies</span>
-                    </li>
-                     </li>
-                    <li class="option">
-                        <i class="bx bxl-slack-old" style="color: #E1306C;"></i>
-                        <span class="option-text">KGV</span>
-                    </li>
-                </ul>
-            </div>
+.option {
+  padding: 8px;
+  cursor: pointer;
+}
 
-            <!-- second Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="campaign-candidate">Campaign/Candidate:</label>
-                    <input type="text" id="campaign-candidate-ad" name="campaign-candidate">
-                </div>
-            </div>
+.option:hover {
+  background: #f0f0f0;
+}
 
-            <!-- third Item -->
-             <div class="select-menu">
-                <div class="select-btn">
-                    <label for="state">Sate:</label>
-                     <input type="text" id="state" name="state">
-                </div>
-                
+.option i {
+  margin-right: 5px;
+}
 
-            <!-- fourth Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="district">District:</label>
-                    <input type="text" id="district" name="district">
-                </div>
-            </div>
+.buttons {
+  text-align: center;
+}
 
-            <!-- fifth Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="start-date">Start Date:</label>
-                      <input type="text" id="start-date" name="start-date">
-                </div>
-            </div>
+.button {
+  background: #007bff; /* Modern blue button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 14px;
+}
 
-            <!-- sixth Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="start-date">End Date:</label>
-                      <input type="text" id="end-date" name="end-date">
-                </div>
-            </div>
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
 
-            <!-- seventh Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="platform">Platform:</label>
-                    <span class="sBtn-text" id="platform" name="platform">Select your option</span>
-                    <i class="bx bx-chevron-down"></i>
-                </div>
-                <ul class="options">
-                    <li class="option">
-                        <i class="bx bxs-data" style="color: #171515;"></i>
-                        <span class="option-text">Programmatic</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-instagram-alt" style="color: #E1306C;"></i>
-                        <span class="option-text">Nova Via Programmatic</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxs-hand-right" style="color: #0E76A8;"></i>
-                        <span class="option-text">YouTube</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-facebook-circle" style="color: #4267B2;"></i>
-                        <span class="option-text">Facebook</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-twitter" style="color: #1DA1F2;"></i>
-                        <span class="option-text">Twitter</span>
-                         </li>
-                    <li class="option">
-                        <i class="bx bxl-google" style="color: #1DA1F2;"></i>
-                        <span class="option-text">Google</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-linkedin-square" style="color: #0E76A8;"></i>
-                        <span class="option-text">Linkedin</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- eighth Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="media-type">Media Type:</label>
-                    <span class="sBtn-text" id="media-type" name="media-type">Select your option</span>
-                    <i class="bx bx-chevron-down"></i>
-                </div>
-                <ul class="options">
-                    <li class="option">
-                        <i class="bx bxs-square" style="color: #171515;"></i>
-                        <span class="option-text">Standard Display</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxs-slideshow" style="color: #E1306C;"></i>
-                        <span class="option-text">Standard Video</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxs-tv" style="color: #0E76A8;"></i>
-                        <span class="option-text">CTV</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxs-square-rounded" style="color: #4267B2;"></i>
-                        <span class="option-text">Premium CTV</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxs-image-alt" style="color: #1DA1F2;"></i>
-                        <span class="option-text">Programmatic Social Display</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxs-video" style="color: #1DA1F2;"></i>
-                        <span class="option-text">Programmatic Social Video</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bx-video" style="color: #1DA1F2;"></i>
-                        <span class="option-text">PMP Video</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxs-movie-play" style="color: #1DA1F2;"></i>
-                        <span class="option-text">PMP Display</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-facebook-circle" style="color: #1DA1F2;"></i>
-                        <span class="option-text">Facebook Video</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-facebook-circle" style="color: #1DA1F2;"></i>
-                        <span class="option-text">Facebook Display</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxs-message-detail" style="color: #1DA1F2;"></i>
-                        <span class="option-text">Paid Search</span>
-                    </li>
-                     <li class="option">
-                        <i class="bx bx-video-recording" style="color: #1DA1F2;"></i>
-                        <span class="option-text">YouTube Video</span>
-                    </li>
-                     <li class="option">
-                        <i class="bx bx-street-view" style="color: #1DA1F2;"></i>
-                        <span class="option-text">DOOH</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-twitter" style="color: #1DA1F2;"></i>
-                        <span class="option-text">Twitter Video</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bxl-twitter" style="color: #1DA1F2;"></i>
-                        <span class="option-text">Twitter Display</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- ninth Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="cpm">CPM:</label>
-                    <input type="text" id="cpm" name="cpm">
-                </div>
-            </div>
-
-            <!-- tenth Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="targeting-type">Targeting Type:</label>
-                    <span class="sBtn-text" id="targeting-type" name="targeting-type">Select your option</span>
-                    <i class="bx bx-chevron-down"></i>
-                </div>
-                <ul class="options">
-                    <li class="option">
-                        <i class="bx bx-loader" style="color: #171515;"></i>
-                        <span class="option-text">1st Party</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bx-loader" style="color: #E1306C;"></i>
-                        <span class="option-text">Contextual</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bx-loader" style="color: #0E76A8;"></i>
-                        <span class="option-text">Retargeting</span>
-                        </li>
-                    <li class="option">
-                        <i class="bx bx-loader" style="color: #0E76A8;"></i>
-                        <span class="option-text">GEO</span>
-                    </li>
-        
-                </ul>
-            </div>
-
-            <!-- eleventh Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="data-source">Data Source:</label>
-                    <span class="sBtn-text" id="data-source" name="data-source">Select your option</span>
-                    <i class="bx bx-chevron-down"></i>
-                     </div>
-                <ul class="options">
-                    <li class="option">
-                        <i class="bx bx-map-pin" style="color: #171515;"></i>
-                        <span class="option-text">PDI</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bx-map-pin" style="color: #E1306C;"></i>
-                        <span class="option-text">Semcasting</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bx-map-pin" style="color: #0E76A8;"></i>
-                        <span class="option-text">Resonate</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bx-map-pin" style="color: #4267B2;"></i>
-                        <span class="option-text">Facebook</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bx-map-pin" style="color: #1DA1F2;"></i>
-                        <span class="option-text">Twitter</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bx-map-pin" style="color: #1DA1F2;"></i>
-                        <span class="option-text">Retargeting</span>
-                    </li>
-                    <li class="option">
-                        <i class="bx bx-map-pin"  style="color: #1DA1F2;"></i>
-                        <span class="option-text">YouTube</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- twelveth Item -->
-            <div class="select-menu">
-                <div class="select-btn">
-                    <label for="audience">Audience:</label>
-                    <input type="text" id="audience" name="audience">
-                </div>
-            </div>
-
-            <div class="buttons">
-                <button class="button" onclick="generateAdGroupName()">Generate Ad Group Name</button>
-                <button class="button" onclick="resetAdForm()">Reset</button>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div id="name-list-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Name</h2>
-            <ul id="name-list"></ul>
-        </div>
-    </div>
-    
-
-    <script src="main.js"></script>
-</body>
-</html>
+/* ... (rest of your modal CSS remains the same) */
